@@ -4,8 +4,6 @@ import main.java.ru.ifmo.rain.khusainov.lrucache.LRUCache;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.*;
-
 import static java.lang.Math.abs;
 
 public class LRUCacheTests {

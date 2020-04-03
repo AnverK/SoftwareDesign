@@ -4,7 +4,6 @@ import ru.ifmo.rain.khusainov.graphdrawer.primitives.Circle;
 import ru.ifmo.rain.khusainov.graphdrawer.primitives.Line;
 import ru.ifmo.rain.khusainov.graphdrawer.primitives.Point;
 
-import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 import java.util.List;
