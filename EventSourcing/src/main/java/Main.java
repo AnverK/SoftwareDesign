@@ -16,14 +16,8 @@ public class Main {
         EventStorage eventStorage = new EventStorage();
         TurnstileServer turnstileServerServer = new TurnstileServer(new ReactiveMongoDriver(DATABASE_NAME, eventStorage));
         ManagerServer managerServer = new ManagerServer(new ReactiveMongoDriver(DATABASE_NAME, eventStorage));
-        ReportServer reportServer;
-        try {
-            reportServer = new ReportServer(new ReactiveMongoDriver(DATABASE_NAME, eventStorage), eventStorage);
-        } catch (Throwable throwable) {
-            System.out.println("Could not start report server");
-            throwable.printStackTrace();
-            return;
-        }
+        ReportServer reportServer = new ReportServer(new ReactiveMongoDriver(DATABASE_NAME, eventStorage), eventStorage);
+
         new Thread(new ManagerServerRunner(managerServer)).start();
         new Thread(new TurnstileServerRunner(turnstileServerServer)).start();
         new Thread(new ReportServerRunner(reportServer)).start();
